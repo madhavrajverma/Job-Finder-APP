@@ -9,8 +9,30 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView {
+            HomeScreen().tabItem {
+                VStack{
+                    Image(systemName: "house")
+                    Text("Home")
+                }
+            }
+            ChatScreen()
+                .tabItem {
+                    VStack{
+                        Image(systemName: "message")
+                        Text("Chat")
+                    }
+                }
+            
+            ProfileScreen()
+                .tabItem {
+                    VStack{
+                        Image(systemName: "person")
+                        Text("Profile")
+                    }
+                }
+            
+        }.accentColor(Color("fgColor"))
     }
 }
 

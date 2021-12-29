@@ -7,18 +7,54 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E66DE14277C90E800831F21 /* PDFKitRepresentedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E66DE13277C90E800831F21 /* PDFKitRepresentedView.swift */; };
+		1E66DE16277C910B00831F21 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E66DE15277C910B00831F21 /* DocumentPicker.swift */; };
+		1E66DE1A277C982E00831F21 /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E66DE19277C982E00831F21 /* DocumentView.swift */; };
 		1EEE31FB2776D5AF005A4036 /* JobFinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE31FA2776D5AF005A4036 /* JobFinderApp.swift */; };
 		1EEE31FD2776D5AF005A4036 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE31FC2776D5AF005A4036 /* ContentView.swift */; };
 		1EEE31FF2776D5B3005A4036 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EEE31FE2776D5B3005A4036 /* Assets.xcassets */; };
 		1EEE32022776D5B3005A4036 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EEE32012776D5B3005A4036 /* Preview Assets.xcassets */; };
+		1EEE320E2776D617005A4036 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE320D2776D617005A4036 /* HomeScreen.swift */; };
+		1EEE32102776D624005A4036 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE320F2776D624005A4036 /* ProfileScreen.swift */; };
+		1EEE32122776D62F005A4036 /* ChatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE32112776D62F005A4036 /* ChatScreen.swift */; };
+		1EEE32142776D99F005A4036 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE32132776D99F005A4036 /* OnboardView.swift */; };
+		1EEE32172776E439005A4036 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE32162776E439005A4036 /* LogInView.swift */; };
+		1EEE32192776E448005A4036 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE32182776E448005A4036 /* SignUpView.swift */; };
+		1EEE321C2776F5FC005A4036 /* customModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE321B2776F5FC005A4036 /* customModifier.swift */; };
+		1EEE321E2776F9C7005A4036 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE321D2776F9C7005A4036 /* SearchBar.swift */; };
+		1EEE322127771A20005A4036 /* PopularJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE322027771A1F005A4036 /* PopularJobView.swift */; };
+		1EEE322327772788005A4036 /* RecentJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE322227772788005A4036 /* RecentJob.swift */; };
+		1EEE322527772C40005A4036 /* ApplyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE322427772C3F005A4036 /* ApplyView.swift */; };
+		1EEE322727773FA8005A4036 /* JobApply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE322627773FA8005A4036 /* JobApply.swift */; };
+		1EEE322A277795A4005A4036 /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE3229277795A3005A4036 /* EditProfile.swift */; };
+		1EEE322C277795B0005A4036 /* MyApplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE322B277795B0005A4036 /* MyApplicationView.swift */; };
+		1EEE322E277795BD005A4036 /* NotificationSettigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE322D277795BC005A4036 /* NotificationSettigView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E66DE13277C90E800831F21 /* PDFKitRepresentedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKitRepresentedView.swift; sourceTree = "<group>"; };
+		1E66DE15277C910B00831F21 /* DocumentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
+		1E66DE19277C982E00831F21 /* DocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentView.swift; sourceTree = "<group>"; };
 		1EEE31F72776D5AF005A4036 /* JobFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EEE31FA2776D5AF005A4036 /* JobFinderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobFinderApp.swift; sourceTree = "<group>"; };
 		1EEE31FC2776D5AF005A4036 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1EEE31FE2776D5B3005A4036 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1EEE32012776D5B3005A4036 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1EEE320D2776D617005A4036 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		1EEE320F2776D624005A4036 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
+		1EEE32112776D62F005A4036 /* ChatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreen.swift; sourceTree = "<group>"; };
+		1EEE32132776D99F005A4036 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
+		1EEE32162776E439005A4036 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		1EEE32182776E448005A4036 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		1EEE321B2776F5FC005A4036 /* customModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customModifier.swift; sourceTree = "<group>"; };
+		1EEE321D2776F9C7005A4036 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		1EEE322027771A1F005A4036 /* PopularJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularJobView.swift; sourceTree = "<group>"; };
+		1EEE322227772788005A4036 /* RecentJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentJob.swift; sourceTree = "<group>"; };
+		1EEE322427772C3F005A4036 /* ApplyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyView.swift; sourceTree = "<group>"; };
+		1EEE322627773FA8005A4036 /* JobApply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobApply.swift; sourceTree = "<group>"; };
+		1EEE3229277795A3005A4036 /* EditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
+		1EEE322B277795B0005A4036 /* MyApplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApplicationView.swift; sourceTree = "<group>"; };
+		1EEE322D277795BC005A4036 /* NotificationSettigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettigView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +87,12 @@
 		1EEE31F92776D5AF005A4036 /* JobFinder */ = {
 			isa = PBXGroup;
 			children = (
+				1EEE321A2776F5E3005A4036 /* utils */,
+				1EEE320C2776D602005A4036 /* Screens */,
+				1EEE320B2776D5FC005A4036 /* View */,
+				1EEE320A2776D5E8005A4036 /* OnboardingView */,
+				1EEE32092776D5E0005A4036 /* ViewModel */,
+				1EEE32082776D5D5005A4036 /* Model */,
 				1EEE31FA2776D5AF005A4036 /* JobFinderApp.swift */,
 				1EEE31FC2776D5AF005A4036 /* ContentView.swift */,
 				1EEE31FE2776D5B3005A4036 /* Assets.xcassets */,
@@ -65,6 +107,90 @@
 				1EEE32012776D5B3005A4036 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1EEE32082776D5D5005A4036 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1EEE32092776D5E0005A4036 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1EEE320A2776D5E8005A4036 /* OnboardingView */ = {
+			isa = PBXGroup;
+			children = (
+				1EEE32132776D99F005A4036 /* OnboardView.swift */,
+			);
+			path = OnboardingView;
+			sourceTree = "<group>";
+		};
+		1EEE320B2776D5FC005A4036 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1EEE322827779593005A4036 /* ProfileView */,
+				1EEE321F27771A09005A4036 /* HomeView */,
+				1EEE32152776E422005A4036 /* AuthenticationView */,
+				1EEE321D2776F9C7005A4036 /* SearchBar.swift */,
+				1EEE322427772C3F005A4036 /* ApplyView.swift */,
+				1EEE322627773FA8005A4036 /* JobApply.swift */,
+				1E66DE19277C982E00831F21 /* DocumentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1EEE320C2776D602005A4036 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				1EEE320D2776D617005A4036 /* HomeScreen.swift */,
+				1EEE320F2776D624005A4036 /* ProfileScreen.swift */,
+				1EEE32112776D62F005A4036 /* ChatScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		1EEE32152776E422005A4036 /* AuthenticationView */ = {
+			isa = PBXGroup;
+			children = (
+				1EEE32162776E439005A4036 /* LogInView.swift */,
+				1EEE32182776E448005A4036 /* SignUpView.swift */,
+			);
+			path = AuthenticationView;
+			sourceTree = "<group>";
+		};
+		1EEE321A2776F5E3005A4036 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				1EEE321B2776F5FC005A4036 /* customModifier.swift */,
+				1E66DE13277C90E800831F21 /* PDFKitRepresentedView.swift */,
+				1E66DE15277C910B00831F21 /* DocumentPicker.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		1EEE321F27771A09005A4036 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				1EEE322027771A1F005A4036 /* PopularJobView.swift */,
+				1EEE322227772788005A4036 /* RecentJob.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		1EEE322827779593005A4036 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				1EEE3229277795A3005A4036 /* EditProfile.swift */,
+				1EEE322B277795B0005A4036 /* MyApplicationView.swift */,
+				1EEE322D277795BC005A4036 /* NotificationSettigView.swift */,
+			);
+			path = ProfileView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +264,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EEE31FD2776D5AF005A4036 /* ContentView.swift in Sources */,
+				1EEE322127771A20005A4036 /* PopularJobView.swift in Sources */,
+				1E66DE16277C910B00831F21 /* DocumentPicker.swift in Sources */,
+				1EEE322727773FA8005A4036 /* JobApply.swift in Sources */,
+				1EEE322527772C40005A4036 /* ApplyView.swift in Sources */,
+				1EEE32172776E439005A4036 /* LogInView.swift in Sources */,
 				1EEE31FB2776D5AF005A4036 /* JobFinderApp.swift in Sources */,
+				1EEE320E2776D617005A4036 /* HomeScreen.swift in Sources */,
+				1EEE322C277795B0005A4036 /* MyApplicationView.swift in Sources */,
+				1EEE32192776E448005A4036 /* SignUpView.swift in Sources */,
+				1EEE322A277795A4005A4036 /* EditProfile.swift in Sources */,
+				1E66DE14277C90E800831F21 /* PDFKitRepresentedView.swift in Sources */,
+				1E66DE1A277C982E00831F21 /* DocumentView.swift in Sources */,
+				1EEE32122776D62F005A4036 /* ChatScreen.swift in Sources */,
+				1EEE32142776D99F005A4036 /* OnboardView.swift in Sources */,
+				1EEE321E2776F9C7005A4036 /* SearchBar.swift in Sources */,
+				1EEE322E277795BD005A4036 /* NotificationSettigView.swift in Sources */,
+				1EEE32102776D624005A4036 /* ProfileScreen.swift in Sources */,
+				1EEE322327772788005A4036 /* RecentJob.swift in Sources */,
+				1EEE321C2776F5FC005A4036 /* customModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
