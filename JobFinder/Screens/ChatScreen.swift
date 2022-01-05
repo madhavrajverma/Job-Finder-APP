@@ -17,6 +17,7 @@ struct User : Identifiable {
 
 
 var users:[User] = [
+    
     User(name: "Mike", image: "mike", message: "What about paypal?"),
     User(name: "Robert", image: "steve", message: "Let 's have a call for future projects"),
     User(name: "Henry", image: "henry", message: "Can we talk more about you?"),
@@ -31,22 +32,26 @@ var users:[User] = [
 struct ChatScreen: View {
     var body: some View {
         NavigationView {
-            ScrollView(.vertical,showsIndicators: false) {
+            VStack {
                 
-                VStack {
+
                     Text("Messages")
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(.gray)
-                    VStack(alignment:.leading) {
-                        ForEach(users) {user in
-                            MessageUserView(image: user.image, name: user.name, message: user.message)
-                            Divider()
-                        }.onDelete(perform: removeUser)
-                }
-            }
-            .navigationBarHidden(true)
-        }
+                   
+                        List {
+                            ForEach(users) { user in
+                                NavigationLink(destination: ChatDetailView()) {
+                                    MessageUserView(image: user.image, name: user.name, message: user.message)
+                                }
+                               
+                            }.onDelete(perform: removeUser)
+                        }.listStyle(.plain)
+                
+            
+        }            .navigationBarHidden(true)
+
     }
     
         

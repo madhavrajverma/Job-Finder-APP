@@ -110,6 +110,7 @@ struct ApplyView: View {
             }
 
         }.padding()
+            .background(Color("Color").edgesIgnoringSafeArea(.all))
             .navigationBarBackButtonHidden(true)
             .navigationBarHidden(true)
            

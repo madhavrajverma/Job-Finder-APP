@@ -14,62 +14,66 @@ struct ProfileScreen: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-               
+            ScrollView {
                 VStack {
-                    Text("Profile")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .foregroundColor(.gray)
+                   
+                    VStack {
+                        Text("Profile")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .foregroundColor(.gray)
+                        
+                        Image("mypic")
+                            .resizable()
+                            .scaledToFit()
+                            .clipShape(Circle())
+                            .shadow(radius: 2)
+                            .frame(width:200,height: 200)
+                          
+                        Text("Madhav raj verma")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(.black)
+                        
+                        Text(verbatim: "Mad007@gamil.com")
+                            .font(.body)
+                            .foregroundColor(.gray)
+                    }
                     
-                    Image("mypic")
-                        .resizable()
-                        .scaledToFit()
-                        .clipShape(Circle())
-                        .shadow(radius: 2)
-                        .frame(width:200,height: 200)
-                      
-                    Text("Madhav raj verma")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(.black)
+                  
                     
-                    Text(verbatim: "Mad007@gamil.com")
-                        .font(.body)
-                        .foregroundColor(.gray)
-                }
-                
-              
-                
-                VStack(alignment:.leading,spacing: 25) {
-                    editProfileBtn
-                    applicationBtn
-                    notificationBtn
-                    shareAppBtn
-                }
-                .padding(.vertical)
-                Spacer(minLength: 0)
-                
-                NavigationLink("",isActive: $isEditProfileView) {
-                    EditProfile()
-                }
-                
-                NavigationLink("",isActive: $isAplicationView) {
-                    MyApplicationView()
-                }
-                
-                NavigationLink("",isActive: $isNotificationView) {
-                    NotificationSettigView()
-                }
-                
-                
-                logOutBtn
-                    .padding(.bottom,20)
-                
-            }.padding()
-                .navigationBarHidden(true)
+                    VStack(alignment:.leading,spacing: 25) {
+                        editProfileBtn
+                        applicationBtn
+                        notificationBtn
+                        shareAppBtn
+                    }
+                    .padding(.vertical)
+                    Spacer(minLength: 0)
+                    
+                    NavigationLink("",isActive: $isEditProfileView) {
+                        EditProfile()
+                    }
+                    
+                    NavigationLink("",isActive: $isAplicationView) {
+                        MyApplicationView()
+                    }
+                    
+                    NavigationLink("",isActive: $isNotificationView) {
+                        NotificationSettigView()
+                    }
+                    
+                    
+                    logOutBtn
+                        .padding(.bottom,20)
+                    
+                }.padding()
+                    .navigationBarHidden(true)
+            }
         }
     }
+    
+    // Edit Profile Button 
     
     var editProfileBtn :some View {
         Button(action:{
@@ -79,6 +83,9 @@ struct ProfileScreen: View {
         }
     }
     
+    
+    // Application button
+    
     var applicationBtn:some View {
         Button(action:{
             isAplicationView = true
@@ -86,6 +93,9 @@ struct ProfileScreen: View {
             ProfileMenuItemView(text: "My Application", color: Color.yellow, icon: "clock.fill")
         }
     }
+    
+    
+    // Notification button
     
     var notificationBtn: some View {
         Button(action:{
@@ -95,6 +105,9 @@ struct ProfileScreen: View {
         }
     }
     
+    
+    
+    // Share app button
     var shareAppBtn: some View {
         Button(action:{
             actionSheet()
@@ -103,7 +116,7 @@ struct ProfileScreen: View {
         }
     }
     
-    
+  // Log out Button
     var logOutBtn: some View {
         Button(action:{
             
@@ -111,6 +124,8 @@ struct ProfileScreen: View {
             ProfileMenuItemView(text: "Log Out", color: Color.red, icon: "arrowshape.turn.up.backward.fill")
         }
     }
+    
+  // Share app Method or function
     
     func actionSheet() {
         

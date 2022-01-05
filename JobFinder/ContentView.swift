@@ -7,7 +7,13 @@
 
 import SwiftUI
 
+enum Tabs{
+            case home, profile,char
+        }
+
+
 struct ContentView: View {
+    @State var tabSelection: Tabs = .home
     var body: some View {
         TabView {
             HomeScreen().tabItem {

@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// Main screen after succesfully enter in app
+
 struct HomeScreen: View {
     @State private var searchText:String = ""
     var body: some View {
@@ -43,6 +45,8 @@ struct HomeScreen: View {
                         }
                         .padding(.top,20)
                         
+                        // MARK: - Display a popular Jobs
+                        
                         ScrollView(.horizontal,showsIndicators: false) {
                             HStack(spacing:15){
                                 ForEach(0..<6) { _ in
@@ -56,7 +60,8 @@ struct HomeScreen: View {
                                 }
                             }
                         }
-                        
+    
+                        //MARK: - Display recent jobs or jobs which mathced you
                         
                         HomeSectionTitle(title: "Recent Job") {
                             
@@ -92,6 +97,7 @@ struct HomeScreen_Previews: PreviewProvider {
 
 
 
+// MARK: -  Home  section Title view
 
 struct HomeSectionTitle: View {
     

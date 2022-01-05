@@ -26,10 +26,42 @@ struct DocumentView: View {
                  
                 }else {
                     VStack {
-                        Text("File Name:\(fileName)")
                         
-                        Button("Take Resume From Library") {
-                          self.showDocPicker.toggle()
+                        HStack {
+                          Spacer()
+                            Text("File Name:")
+                                .font(.title)
+                                .foregroundColor(.gray)
+                            Spacer()
+                            if isFileName {
+                                Text("\(fileName)")
+                                    .foregroundColor(.white)
+                                    .font(.title3)
+                                    .padding()
+                                    .background(Color("buttonColor").opacity(0.4).cornerRadius(10))
+                            }else {
+                                Text("No File")
+                                    .foregroundColor(.white)
+                                    .font(.title3)
+                                    .padding()
+                                    .background(Color("buttonColor").opacity(0.4).cornerRadius(10))
+                            }
+                            Spacer()
+                            
+                        }
+                             
+                        
+                        
+                        Button(action :{self.showDocPicker.toggle()}) {
+                            
+                            Text("Take Resume From Library")
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                               
+                                .padding()
+                                .frame(maxWidth:.infinity)
+                                .background(Color("fgColor").cornerRadius(10).shadow(color: Color("Mlight"), radius: 5, x: 4, y: 4))
+                                .padding(.horizontal,20)
                         }
                     }
                 }

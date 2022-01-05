@@ -10,6 +10,15 @@
 		1E66DE14277C90E800831F21 /* PDFKitRepresentedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E66DE13277C90E800831F21 /* PDFKitRepresentedView.swift */; };
 		1E66DE16277C910B00831F21 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E66DE15277C910B00831F21 /* DocumentPicker.swift */; };
 		1E66DE1A277C982E00831F21 /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E66DE19277C982E00831F21 /* DocumentView.swift */; };
+		1E66DE1C277CB63300831F21 /* ChooseAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E66DE1B277CB63200831F21 /* ChooseAccountView.swift */; };
+		1E7573E027859C4900C57662 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7573DF27859C4800C57662 /* MessageView.swift */; };
+		1E7573E227859C8700C57662 /* ChatDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7573E127859C8700C57662 /* ChatDetailView.swift */; };
+		1E7573E427859CAF00C57662 /* ChatProfileBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7573E327859CAE00C57662 /* ChatProfileBar.swift */; };
+		1E7573E727859D7700C57662 /* text+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7573E627859D7700C57662 /* text+Extension.swift */; };
+		1E7573EA2785A2AA00C57662 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 1E7573E92785A2AA00C57662 /* Introspect */; };
+		1E7573EC2785A68000C57662 /* keyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7573EB2785A68000C57662 /* keyboardHandler.swift */; };
+		1E7573F02785BD8400C57662 /* MessageListVieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7573EF2785BD8400C57662 /* MessageListVieModel.swift */; };
+		1E7573F22785CCC400C57662 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7573F12785CCC400C57662 /* FilterView.swift */; };
 		1EEE31FB2776D5AF005A4036 /* JobFinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE31FA2776D5AF005A4036 /* JobFinderApp.swift */; };
 		1EEE31FD2776D5AF005A4036 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE31FC2776D5AF005A4036 /* ContentView.swift */; };
 		1EEE31FF2776D5B3005A4036 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EEE31FE2776D5B3005A4036 /* Assets.xcassets */; };
@@ -35,6 +44,14 @@
 		1E66DE13277C90E800831F21 /* PDFKitRepresentedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKitRepresentedView.swift; sourceTree = "<group>"; };
 		1E66DE15277C910B00831F21 /* DocumentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
 		1E66DE19277C982E00831F21 /* DocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentView.swift; sourceTree = "<group>"; };
+		1E66DE1B277CB63200831F21 /* ChooseAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAccountView.swift; sourceTree = "<group>"; };
+		1E7573DF27859C4800C57662 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		1E7573E127859C8700C57662 /* ChatDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailView.swift; sourceTree = "<group>"; };
+		1E7573E327859CAE00C57662 /* ChatProfileBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatProfileBar.swift; sourceTree = "<group>"; };
+		1E7573E627859D7700C57662 /* text+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "text+Extension.swift"; sourceTree = "<group>"; };
+		1E7573EB2785A68000C57662 /* keyboardHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keyboardHandler.swift; sourceTree = "<group>"; };
+		1E7573EF2785BD8400C57662 /* MessageListVieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListVieModel.swift; sourceTree = "<group>"; };
+		1E7573F12785CCC400C57662 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		1EEE31F72776D5AF005A4036 /* JobFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EEE31FA2776D5AF005A4036 /* JobFinderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobFinderApp.swift; sourceTree = "<group>"; };
 		1EEE31FC2776D5AF005A4036 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,12 +79,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E7573EA2785A2AA00C57662 /* Introspect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E7573DE27859C3600C57662 /* Chat View */ = {
+			isa = PBXGroup;
+			children = (
+				1E7573DF27859C4800C57662 /* MessageView.swift */,
+				1E7573E127859C8700C57662 /* ChatDetailView.swift */,
+				1E7573E327859CAE00C57662 /* ChatProfileBar.swift */,
+			);
+			path = "Chat View";
+			sourceTree = "<group>";
+		};
+		1E7573E527859D6400C57662 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1E7573E627859D7700C57662 /* text+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		1E7573ED2785BD6800C57662 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				1E7573EF2785BD8400C57662 /* MessageListVieModel.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		1EEE31EE2776D5AF005A4036 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +131,7 @@
 		1EEE31F92776D5AF005A4036 /* JobFinder */ = {
 			isa = PBXGroup;
 			children = (
+				1E7573E527859D6400C57662 /* Extension */,
 				1EEE321A2776F5E3005A4036 /* utils */,
 				1EEE320C2776D602005A4036 /* Screens */,
 				1EEE320B2776D5FC005A4036 /* View */,
@@ -119,6 +164,7 @@
 		1EEE32092776D5E0005A4036 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1E7573ED2785BD6800C57662 /* Chat */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -134,6 +180,7 @@
 		1EEE320B2776D5FC005A4036 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1E7573DE27859C3600C57662 /* Chat View */,
 				1EEE322827779593005A4036 /* ProfileView */,
 				1EEE321F27771A09005A4036 /* HomeView */,
 				1EEE32152776E422005A4036 /* AuthenticationView */,
@@ -141,6 +188,7 @@
 				1EEE322427772C3F005A4036 /* ApplyView.swift */,
 				1EEE322627773FA8005A4036 /* JobApply.swift */,
 				1E66DE19277C982E00831F21 /* DocumentView.swift */,
+				1E7573F12785CCC400C57662 /* FilterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -160,6 +208,7 @@
 			children = (
 				1EEE32162776E439005A4036 /* LogInView.swift */,
 				1EEE32182776E448005A4036 /* SignUpView.swift */,
+				1E66DE1B277CB63200831F21 /* ChooseAccountView.swift */,
 			);
 			path = AuthenticationView;
 			sourceTree = "<group>";
@@ -170,6 +219,7 @@
 				1EEE321B2776F5FC005A4036 /* customModifier.swift */,
 				1E66DE13277C90E800831F21 /* PDFKitRepresentedView.swift */,
 				1E66DE15277C910B00831F21 /* DocumentPicker.swift */,
+				1E7573EB2785A68000C57662 /* keyboardHandler.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -209,6 +259,9 @@
 			dependencies = (
 			);
 			name = JobFinder;
+			packageProductDependencies = (
+				1E7573E92785A2AA00C57662 /* Introspect */,
+			);
 			productName = JobFinder;
 			productReference = 1EEE31F72776D5AF005A4036 /* JobFinder.app */;
 			productType = "com.apple.product-type.application";
@@ -237,6 +290,9 @@
 				Base,
 			);
 			mainGroup = 1EEE31EE2776D5AF005A4036;
+			packageReferences = (
+				1E7573E82785A2AA00C57662 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
+			);
 			productRefGroup = 1EEE31F82776D5AF005A4036 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -263,24 +319,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E7573F22785CCC400C57662 /* FilterView.swift in Sources */,
 				1EEE31FD2776D5AF005A4036 /* ContentView.swift in Sources */,
 				1EEE322127771A20005A4036 /* PopularJobView.swift in Sources */,
 				1E66DE16277C910B00831F21 /* DocumentPicker.swift in Sources */,
 				1EEE322727773FA8005A4036 /* JobApply.swift in Sources */,
+				1E7573E227859C8700C57662 /* ChatDetailView.swift in Sources */,
+				1E66DE1C277CB63300831F21 /* ChooseAccountView.swift in Sources */,
 				1EEE322527772C40005A4036 /* ApplyView.swift in Sources */,
+				1E7573EC2785A68000C57662 /* keyboardHandler.swift in Sources */,
+				1E7573E027859C4900C57662 /* MessageView.swift in Sources */,
 				1EEE32172776E439005A4036 /* LogInView.swift in Sources */,
 				1EEE31FB2776D5AF005A4036 /* JobFinderApp.swift in Sources */,
 				1EEE320E2776D617005A4036 /* HomeScreen.swift in Sources */,
+				1E7573F02785BD8400C57662 /* MessageListVieModel.swift in Sources */,
 				1EEE322C277795B0005A4036 /* MyApplicationView.swift in Sources */,
 				1EEE32192776E448005A4036 /* SignUpView.swift in Sources */,
 				1EEE322A277795A4005A4036 /* EditProfile.swift in Sources */,
 				1E66DE14277C90E800831F21 /* PDFKitRepresentedView.swift in Sources */,
 				1E66DE1A277C982E00831F21 /* DocumentView.swift in Sources */,
 				1EEE32122776D62F005A4036 /* ChatScreen.swift in Sources */,
+				1E7573E727859D7700C57662 /* text+Extension.swift in Sources */,
 				1EEE32142776D99F005A4036 /* OnboardView.swift in Sources */,
 				1EEE321E2776F9C7005A4036 /* SearchBar.swift in Sources */,
 				1EEE322E277795BD005A4036 /* NotificationSettigView.swift in Sources */,
 				1EEE32102776D624005A4036 /* ProfileScreen.swift in Sources */,
+				1E7573E427859CAF00C57662 /* ChatProfileBar.swift in Sources */,
 				1EEE322327772788005A4036 /* RecentJob.swift in Sources */,
 				1EEE321C2776F5FC005A4036 /* customModifier.swift in Sources */,
 			);
@@ -421,7 +485,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -451,7 +515,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -487,6 +551,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1E7573E82785A2AA00C57662 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1E7573E92785A2AA00C57662 /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E7573E82785A2AA00C57662 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1EEE31EF2776D5AF005A4036 /* Project object */;
 }
