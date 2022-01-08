@@ -11,6 +11,7 @@ struct SignUpView: View {
     @State private var email:String = ""
     @State private var password :String = ""
     @State private var userName:String = ""
+    @StateObject private var registerVM = RegisterViewModel()
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         VStack(spacing:10) {
@@ -101,11 +102,18 @@ struct SignUpView: View {
             }
                 Spacer()
                 
-            }.background(Color("Color"))
+        }.background(Color("Color").edgesIgnoringSafeArea(.all))
     }
     
     var SignUpBtn:some View {
-        Button(action:{}) {
+        Button(action:{
+            registerVM.name = userName
+            registerVM.email = email
+            registerVM.paswword = password
+            registerVM.signUp {
+                
+            }
+        }) {
             Text("SIGN UP")
                 .foregroundColor(.white)
                 .fontWeight(.bold)
@@ -119,7 +127,9 @@ struct SignUpView: View {
     }
     
     var googleBtn :some View {
-        Button(action:{}){
+        Button(action:{
+            
+        }){
             Image("google")
                 .resizable()
                 .scaledToFit()
@@ -129,7 +139,9 @@ struct SignUpView: View {
     }
     
     var facebookBtn :some View {
-        Button(action:{}){
+        Button(action:{
+            
+        }){
             Image("facebook")
                 .resizable()
                 .scaledToFit()

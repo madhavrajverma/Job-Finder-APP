@@ -9,100 +9,118 @@ import SwiftUI
 
 struct LogInView: View {
     
+    
     @State private var email:String = ""
     @State private var password :String = ""
     @State private var isSignUp:Bool = false
+    @StateObject private var loginVM = LoginViewModel()
+    @State private var isAuthenticated:Bool = false
+    
+    
     var body: some View {
 //        ScrollView(.vertical,showsIndicators: false) {
-        VStack(spacing:10) {
-        
-                
-                HStack{
-                    VStack(alignment:.leading,spacing: 5){
-                        Text("Welcome Back!")
-                            .font(.system(size: 40))
-                            .fontWeight(.bold)
-                            .opacity(0.7)
-                     
-                        VStack(alignment:.leading){
-                    
-                    Text("Fill yor details or continue")
-                        .font(.body)
-                        .foregroundColor(.gray)
-                     
-                    
-                    Text("with social media")
-                        .font(.body)
-                        .foregroundColor(.gray)
-                       
-                }
-                  
+        if loginVM.auth {
+            ContentView()
+                .animation(.easeIn)
+                .transition(.scaleAndOffset)
             
-                    }
-                    Spacer(minLength: 0)
-                }.padding(.leading)
-                .padding(.vertical)
-                .padding(.top)
-                
-                VStack() {
-                    HStack {
-                        Image(systemName: "envelope")
-                            .foregroundColor(.gray)
-                        TextField("Email",text:$email)
-                    }
+                 .environmentObject(loginVM)
+        }else {
+            VStack(spacing:10) {
+            
                     
-                    .modifier(customTextFieldModifier())
-                    
-                    HStack {
-                        Image(systemName: "lock")
-                        SecureField("Password",text: $password)
+                    HStack{
+                        VStack(alignment:.leading,spacing: 5){
+                            Text("Welcome Back!")
+                                .font(.system(size: 40))
+                                .fontWeight(.bold)
+                                .opacity(0.7)
+                         
+                            VStack(alignment:.leading){
                         
-                    } .modifier(customTextFieldModifier())
-                    
-                }
-                .padding()
-                
-                Text("Or Continue With")
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-                
-                HStack {
-                    Spacer(minLength: 0)
-                    googleBtn
-                        .padding(.horizontal,10)
-                    facebookBtn
-                        .padding(.horizontal,10)
-                    Spacer(minLength: 0)
-                }.padding(.vertical,5)
-              
-            VStack{
-                
-                forgotPassword
-                
-                logInButton
-                    .padding(.vertical,10)
-                
-                
-                HStack{
-                    Text("New User?")
-                        .font(.headline)
-                        .foregroundColor(.gray)
-                    Button(action:{
-                        isSignUp = true
-                    }) {
-                        Text("Create Account")
-                            .foregroundColor(.black.opacity(0.6))
+                        Text("Fill yor details or continue")
                             .font(.body)
-                            .fontWeight(.bold)
+                            .foregroundColor(.gray)
+                         
+                        
+                        Text("with social media")
+                            .font(.body)
+                            .foregroundColor(.gray)
+                           
+                    }
+                      
+                
+                        }
+                        Spacer(minLength: 0)
+                    }.padding(.leading)
+                    .padding(.vertical)
+                    .padding(.top)
+                    
+                    VStack() {
+                        HStack {
+                            Image(systemName: "envelope")
+                                .foregroundColor(.gray)
+                            TextField("Email",text:$email)
+                        }
+                        
+                        .modifier(customTextFieldModifier())
+                        
+                        HStack {
+                            Image(systemName: "lock")
+                            SecureField("Password",text: $password)
+                            
+                        } .modifier(customTextFieldModifier())
+                        
+                    }
+                    .padding()
+                    
+                    Text("Or Continue With")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                    
+                    HStack {
+                        Spacer(minLength: 0)
+                        googleBtn
+                            .padding(.horizontal,10)
+                        facebookBtn
+                            .padding(.horizontal,10)
+                        Spacer(minLength: 0)
+                    }.padding(.vertical,5)
+                  
+                VStack{
+                    
+                    forgotPassword
+                    
+                    logInButton
+                        .padding(.vertical,10)
+                    
+                    
+                    HStack{
+                        Text("New User?")
+                            .font(.headline)
+                            .foregroundColor(.gray)
+                        Button(action:{
+                            isSignUp = true
+                        }) {
+                            Text("Create Account")
+                                .foregroundColor(.black.opacity(0.6))
+                                .font(.body)
+                                .fontWeight(.bold)
+                        }
                     }
                 }
-            }
-                Spacer()
-                
-            }.background(Color("Color"))
-            .fullScreenCover(isPresented: $isSignUp) {
-                SignUpView()
-            }
+    //
+    //            .fullScreenCover(isPresented: $loginVM.auth, content: {
+    //                ContentView()
+    //            })
+                    Spacer()
+                    
+            }.background(Color("Color").edgesIgnoringSafeArea(.all))
+                .sheet(isPresented: $isSignUp) {
+                    SignUpView()
+                }
+        }
+           
 //        }
     }
     
@@ -116,7 +134,14 @@ struct LogInView: View {
     }
     
     var logInButton:some View {
-        Button(action:{}) {
+        Button(action:{
+            loginVM.email = email
+            loginVM.paswword = password
+            loginVM.login {
+                
+            }
+           
+        }) {
             Text("LOG IN")
                 .foregroundColor(.white)
                 .fontWeight(.bold)
@@ -156,3 +181,7 @@ struct LogInView_Previews: PreviewProvider {
         LogInView()
     }
 }
+
+
+
+

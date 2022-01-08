@@ -11,33 +11,85 @@ import SwiftUI
 
 struct HomeScreen: View {
     @State private var searchText:String = ""
+    @State private var isDisplayAllJobs:Bool = false
     var body: some View {
         NavigationView{
             ScrollView(.vertical,showsIndicators: false) {
                 
             
-                    VStack {
+                VStack(alignment:.leading) {
+                    HStack {
+                        Image("JO")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(.white)
+                            .frame(width:60,height: 60)
+                            .cornerRadius(10)
+                            .padding(5)
+                           
+                          
+                        
+                        
                         HStack {
-                            HStack {
-                                Image(systemName: "magnifyingglass")
-                                    .foregroundColor(Color.gray)
-                                TextField("What do you want to order", text: $searchText)
-                            }
-                            .padding()
-                            .background(RoundedRectangle(cornerRadius: 8).fill(Color.white))
                             
-                            Button(action:{}) {
-                                Image("filter")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width:40,height: 40)
+                        Spacer()
+                            Button(action :{
+                               
+                            }){
+                                HStack {
+                                    Image("mike")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .foregroundColor(.white)
+                                        .frame(width:60,height: 60)
+                                        .cornerRadius(10)
+                                        .padding(5)
+                                        .shadow(color: Color("Mlight"), radius: 5, x: 4, y: 4)
+                    
+                                }
+                                .padding(.horizontal)
+
+                            }
+                            
+                           
+                            Button(action:{
+                                
+                            }) {
+                                Image(systemName: "bell.fill")
+                                    .foregroundColor(.white)
+                                    .frame(width:50,height: 50)
+                                    .cornerRadius(10)
                                     .padding(5)
-                                    .background(Color("fgColor").cornerRadius(10))
+                                    .background(Color("fgColor").cornerRadius(8).shadow(color: Color("Mlight"), radius: 5, x: 4, y: 4))
+                                
                                     
                             }
-                            .padding(.horizontal)
+                           
                         
                             
+                        }
+                        
+                    }
+                    .padding(.bottom)
+                        
+                    VStack(alignment:.leading) {
+                            Text("Find Your ")
+                                .font(.title)
+                                .foregroundColor(Color.gray)
+                            
+                            HStack {
+                                Text("Dream")
+                                    .font(.largeTitle)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.black)
+                                
+                                Text("JOB")
+                                    .font(.system(size: 45))
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color("fgColor"))
+                                
+                                
+                            }
                         }
                         
                         HomeSectionTitle(title: "Popular Job") {
@@ -60,11 +112,12 @@ struct HomeScreen: View {
                                 }
                             }
                         }
+                        
     
                         //MARK: - Display recent jobs or jobs which mathced you
                         
                         HomeSectionTitle(title: "Recent Job") {
-                            
+                            isDisplayAllJobs = true
                         }
                         .padding(.top,20)
                     
@@ -82,12 +135,17 @@ struct HomeScreen: View {
                         
                     }.padding()
                 
+                NavigationLink("",isActive: $isDisplayAllJobs) {
+                    DisplayAllJobsView()
+                }
+                
             }
             .background(Color("Color").edgesIgnoringSafeArea(.all))
             .navigationBarHidden(true)
         }
     }
 }
+
 
 struct HomeScreen_Previews: PreviewProvider {
     static var previews: some View {

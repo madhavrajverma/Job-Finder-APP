@@ -22,6 +22,15 @@ struct ContentView: View {
                     Text("Home")
                 }
             }
+            
+            SearchScreen()
+                .tabItem {
+                    VStack {
+                        Image(systemName: "magnifyingglass")
+                        Text("Search")
+                    }
+                }
+            
             ChatScreen()
                 .tabItem {
                     VStack{

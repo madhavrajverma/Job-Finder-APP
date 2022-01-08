@@ -18,10 +18,8 @@ struct JobApply: View {
     @Environment(\.presentationMode) var presenationMode
     
     @State private  var isFileName :Bool = false
-//    @State private var showDocPicker = false
     @State var data : Data?
-//    @State private var isPdfPreview :Bool = false
-//    @State private var url:URL?
+
     @State private var fileName :String = ""
     
     var body: some View {

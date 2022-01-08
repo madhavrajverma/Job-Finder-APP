@@ -12,6 +12,8 @@ struct ProfileScreen: View {
     @State private var isAplicationView:Bool = false
     @State private var isNotificationView:Bool = false
     
+    @EnvironmentObject private var loginVM:LoginViewModel
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -119,7 +121,7 @@ struct ProfileScreen: View {
   // Log out Button
     var logOutBtn: some View {
         Button(action:{
-            
+            loginVM.signOut()
         }) {
             ProfileMenuItemView(text: "Log Out", color: Color.red, icon: "arrowshape.turn.up.backward.fill")
         }
@@ -137,11 +139,11 @@ struct ProfileScreen: View {
     
 }
 
-struct ProfileScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileScreen()
-    }
-}
+//struct ProfileScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProfileScreen()
+//    }
+//}
 
 
 struct ProfileMenuItemView: View {

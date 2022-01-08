@@ -11,7 +11,7 @@ import SwiftUI
 struct JobFinderApp: App {
     var body: some Scene {
         WindowGroup {
-            FilterView()
+            LogInView()
         }
     }
 }

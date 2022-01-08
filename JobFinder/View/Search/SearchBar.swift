@@ -28,9 +28,9 @@ struct SearchBar: View {
         HStack {
             
             TextField("Search ...", text: searchText)
-                .padding(7)
+                .padding()
                 .padding(.horizontal, 25)
-                .background(Color(.systemGray6))
+                .background(Color.white)
                 .cornerRadius(8)
                 .overlay(
                     HStack {
@@ -44,7 +44,7 @@ struct SearchBar: View {
                                 self.text = ""
                             }) {
                                 Image(systemName: "multiply.circle.fill")
-                                    .foregroundColor(.gray)
+                                    .foregroundColor(.white)
                                     .padding(.trailing, 8)
                             }
                         }
