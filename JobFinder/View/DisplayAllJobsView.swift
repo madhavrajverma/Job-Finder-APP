@@ -9,10 +9,13 @@ import SwiftUI
 
 struct DisplayAllJobsView: View {
     @Environment(\.presentationMode) var presenationMode
+    @Binding var selectionTab : Tabs
+    @ObservedObject var jobsVm :JobViewModel
+    
     var body: some View {
             VStack {
                 
-                HStack {
+                HStack() {
                     Button(action:{
                         presenationMode.wrappedValue.dismiss()
                     }) {
@@ -22,27 +25,42 @@ struct DisplayAllJobsView: View {
                             .padding()
                             .background(Color("fgColor").cornerRadius(8).shadow(color: Color("Mlight"), radius: 5, x: 4, y: 4))
                     }
+                    
+                   
+                  
+                    Text("Home")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .foregroundColor(.gray)
+                        .padding(.leading)
                     Spacer(minLength: 0)
-                }.padding(.leading)
+                    
+                }
                
                 ScrollView(.vertical,showsIndicators: false) {
-                    ForEach(0..<4) { _ in
-                        NavigationLink(destination: ApplyView()) {
-                            SearchResultView()
+                    
+                    
+                    
+                    
+                    ForEach(jobsVm.allJobs,id:\._id) { job in
+                        NavigationLink(destination: ApplyView(selectionTab: $selectionTab,job: job)) {
+                            RecentJob(job: job)
                         }
                     }
                 }
             
             .navigationBarBackButtonHidden(true)
-            .background(Color("Color").edgesIgnoringSafeArea(.all))
+            
             .navigationBarHidden(true)
            
-        }
+            }.onAppear {
+                jobsVm.getAllJobs()
+            }
     }
 }
 
-struct DisplayAllJobsView_Previews: PreviewProvider {
-    static var previews: some View {
-        DisplayAllJobsView()
-    }
-}
+//struct DisplayAllJobsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DisplayAllJobsView()
+//    }
+//}

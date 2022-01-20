@@ -12,8 +12,12 @@ import SwiftUI
 struct HomeScreen: View {
     @State private var searchText:String = ""
     @State private var isDisplayAllJobs:Bool = false
+    @Binding var  selectionTab : Tabs
+    
+    @EnvironmentObject var jobVM :JobViewModel 
+    
     var body: some View {
-        NavigationView{
+        NavigationView {
             ScrollView(.vertical,showsIndicators: false) {
                 
             
@@ -27,14 +31,12 @@ struct HomeScreen: View {
                             .cornerRadius(10)
                             .padding(5)
                            
-                          
-                        
                         
                         HStack {
                             
                         Spacer()
                             Button(action :{
-                               
+                                selectionTab = .profile
                             }){
                                 HStack {
                                     Image("mike")
@@ -101,9 +103,9 @@ struct HomeScreen: View {
                         
                         ScrollView(.horizontal,showsIndicators: false) {
                             HStack(spacing:15){
-                                ForEach(0..<6) { _ in
-                                    NavigationLink(destination: ApplyView()) {
-                                        PopularJobView()
+                                ForEach(jobVM.Popularjobs,id:\._id) { job in
+                                    NavigationLink(destination: ApplyView(selectionTab: $selectionTab,job: job)) {
+                                        PopularJobView(job:job)
                                             .padding(.vertical)
                                     }
                                         
@@ -122,9 +124,9 @@ struct HomeScreen: View {
                         .padding(.top,20)
                     
                             VStack(spacing:15){
-                                ForEach(0..<6) { _ in
-                                    NavigationLink(destination: ApplyView()) {
-                                        RecentJob()
+                                ForEach(jobVM.recentJobs,id:\._id) { job in
+                                    NavigationLink(destination:  ApplyView(selectionTab: $selectionTab,job: job)) {
+                                        RecentJob(job: job)
                                     }
                                        
                                 }
@@ -136,22 +138,24 @@ struct HomeScreen: View {
                     }.padding()
                 
                 NavigationLink("",isActive: $isDisplayAllJobs) {
-                    DisplayAllJobsView()
+                    DisplayAllJobsView(selectionTab:$selectionTab,jobsVm: jobVM)
+                        .padding()
                 }
                 
             }
             .background(Color("Color").edgesIgnoringSafeArea(.all))
             .navigationBarHidden(true)
         }
+        
     }
 }
 
 
-struct HomeScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeScreen()
-    }
-}
+//struct HomeScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HomeScreen(selectionTab: Tabs.home)
+//    }
+//}
 
 
 

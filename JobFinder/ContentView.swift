@@ -8,28 +8,29 @@
 import SwiftUI
 
 enum Tabs{
-            case home, profile,char
+            case home, profile,chat,search
         }
 
 
 struct ContentView: View {
     @State var tabSelection: Tabs = .home
     var body: some View {
-        TabView {
-            HomeScreen().tabItem {
+        TabView(selection: $tabSelection) {
+            HomeScreen(selectionTab: $tabSelection).tabItem {
                 VStack{
                     Image(systemName: "house")
                     Text("Home")
                 }
-            }
+            }.tag(Tabs.home)
+                .animation(.easeIn)
             
-            SearchScreen()
+            SearchScreen(selectionTab: $tabSelection)
                 .tabItem {
                     VStack {
                         Image(systemName: "magnifyingglass")
                         Text("Search")
                     }
-                }
+                }.tag(Tabs.search)
             
             ChatScreen()
                 .tabItem {
@@ -37,7 +38,7 @@ struct ContentView: View {
                         Image(systemName: "message")
                         Text("Chat")
                     }
-                }
+                }.tag(Tabs.chat)
             
             ProfileScreen()
                 .tabItem {
@@ -45,7 +46,7 @@ struct ContentView: View {
                         Image(systemName: "person")
                         Text("Profile")
                     }
-                }
+                }.tag(Tabs.profile)
             
         }.accentColor(Color("fgColor"))
     }

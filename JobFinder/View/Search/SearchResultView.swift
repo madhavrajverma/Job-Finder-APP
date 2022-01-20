@@ -6,28 +6,36 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct SearchResultView: View {
+    let job:Job
     var body: some View {
         VStack {
             HStack {
-                Image("facebook")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width:50,height: 50)
-                    .cornerRadius(8)
                 
+                if let url = URL(string: job.companyImage)  {
+                    URLImage(url){ image in
+                        image
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width:50,height: 50)
+                            .cornerRadius(8)
+                        
+                    }
+                }
+                  
                 VStack(alignment:.leading,spacing: 15) {
                     
-                    Text("Facebook")
+                    Text(job.company)
                         .font(.body)
                         .foregroundColor(.gray)
-                    Text("UI/UX Designer")
+                    Text(job.title)
                         .font(.title3)
                         .foregroundColor(.black)
                        
                     
-                    Text("Full Time")
+                    Text(job.jobType)
                         .font(.body)
                         .foregroundColor(.gray)
                         .fontWeight(.regular)
@@ -36,7 +44,7 @@ struct SearchResultView: View {
                 
                 Spacer(minLength: 0)
                 
-                Text("$4550/m")
+                Text("$\(job.salary)")
                     .font(.body)
                     .foregroundColor(.gray)
                     .fontWeight(.regular)
@@ -46,8 +54,10 @@ struct SearchResultView: View {
     }
 }
 
-struct SearchResultView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchResultView()
-    }
-}
+
+
+//struct SearchResultView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SearchResultView()
+//    }
+//}

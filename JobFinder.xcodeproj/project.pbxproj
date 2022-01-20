@@ -12,6 +12,8 @@
 		1E66DE16277C910B00831F21 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E66DE15277C910B00831F21 /* DocumentPicker.swift */; };
 		1E66DE1A277C982E00831F21 /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E66DE19277C982E00831F21 /* DocumentView.swift */; };
 		1E66DE1C277CB63300831F21 /* ChooseAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E66DE1B277CB63200831F21 /* ChooseAccountView.swift */; };
+		1E672BD22799432100E12C40 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1E672BD12799432100E12C40 /* Alamofire */; };
+		1E672BD427994EF700E12C40 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E672BD327994EF700E12C40 /* SearchViewModel.swift */; };
 		1E7573E027859C4900C57662 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7573DF27859C4800C57662 /* MessageView.swift */; };
 		1E7573E227859C8700C57662 /* ChatDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7573E127859C8700C57662 /* ChatDetailView.swift */; };
 		1E7573E427859CAF00C57662 /* ChatProfileBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7573E327859CAE00C57662 /* ChatProfileBar.swift */; };
@@ -27,6 +29,9 @@
 		1E9D56AF278A37F10006FCC9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9D56AE278A37F10006FCC9 /* LoginViewModel.swift */; };
 		1E9D56B1278A395E0006FCC9 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9D56B0278A395E0006FCC9 /* RegisterViewModel.swift */; };
 		1E9D56B3278A52F30006FCC9 /* transition+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9D56B2278A52F20006FCC9 /* transition+Extension.swift */; };
+		1EDBC15C2790DAE600B34AFC /* JobViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDBC15B2790DAE600B34AFC /* JobViewModel.swift */; };
+		1EDBC15E2790DB5200B34AFC /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDBC15D2790DB5200B34AFC /* Job.swift */; };
+		1EDBC1632790E8E900B34AFC /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1EDBC1622790E8E900B34AFC /* URLImage */; };
 		1EEE31FB2776D5AF005A4036 /* JobFinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE31FA2776D5AF005A4036 /* JobFinderApp.swift */; };
 		1EEE31FD2776D5AF005A4036 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE31FC2776D5AF005A4036 /* ContentView.swift */; };
 		1EEE31FF2776D5B3005A4036 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EEE31FE2776D5B3005A4036 /* Assets.xcassets */; };
@@ -46,6 +51,7 @@
 		1EEE322A277795A4005A4036 /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE3229277795A3005A4036 /* EditProfile.swift */; };
 		1EEE322C277795B0005A4036 /* MyApplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE322B277795B0005A4036 /* MyApplicationView.swift */; };
 		1EEE322E277795BD005A4036 /* NotificationSettigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE322D277795BC005A4036 /* NotificationSettigView.swift */; };
+		1EF515BC2790F971009B687E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF515BB2790F971009B687E /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +60,7 @@
 		1E66DE15277C910B00831F21 /* DocumentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
 		1E66DE19277C982E00831F21 /* DocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentView.swift; sourceTree = "<group>"; };
 		1E66DE1B277CB63200831F21 /* ChooseAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAccountView.swift; sourceTree = "<group>"; };
+		1E672BD327994EF700E12C40 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		1E7573DF27859C4800C57662 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		1E7573E127859C8700C57662 /* ChatDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailView.swift; sourceTree = "<group>"; };
 		1E7573E327859CAE00C57662 /* ChatProfileBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatProfileBar.swift; sourceTree = "<group>"; };
@@ -68,6 +75,8 @@
 		1E9D56AE278A37F10006FCC9 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		1E9D56B0278A395E0006FCC9 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		1E9D56B2278A52F20006FCC9 /* transition+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "transition+Extension.swift"; sourceTree = "<group>"; };
+		1EDBC15B2790DAE600B34AFC /* JobViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobViewModel.swift; sourceTree = "<group>"; };
+		1EDBC15D2790DB5200B34AFC /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		1EEE31F72776D5AF005A4036 /* JobFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EEE31FA2776D5AF005A4036 /* JobFinderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobFinderApp.swift; sourceTree = "<group>"; };
 		1EEE31FC2776D5AF005A4036 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,6 +97,7 @@
 		1EEE3229277795A3005A4036 /* EditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
 		1EEE322B277795B0005A4036 /* MyApplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApplicationView.swift; sourceTree = "<group>"; };
 		1EEE322D277795BC005A4036 /* NotificationSettigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettigView.swift; sourceTree = "<group>"; };
+		1EF515BB2790F971009B687E /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +105,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E672BD22799432100E12C40 /* Alamofire in Frameworks */,
+				1EDBC1632790E8E900B34AFC /* URLImage in Frameworks */,
 				1E7573EA2785A2AA00C57662 /* Introspect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				1E9D56A8278A338E0006FCC9 /* UserModel.swift */,
+				1EDBC15D2790DB5200B34AFC /* Job.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -212,6 +225,8 @@
 			children = (
 				1E9D56AD278A37D90006FCC9 /* Authentication */,
 				1E7573ED2785BD6800C57662 /* Chat */,
+				1EDBC15B2790DAE600B34AFC /* JobViewModel.swift */,
+				1E672BD327994EF700E12C40 /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -236,6 +251,7 @@
 				1EEE322627773FA8005A4036 /* JobApply.swift */,
 				1E66DE19277C982E00831F21 /* DocumentView.swift */,
 				1E1CDEE62785FF9A00D14925 /* DisplayAllJobsView.swift */,
+				1EF515BB2790F971009B687E /* LoadingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -309,6 +325,8 @@
 			name = JobFinder;
 			packageProductDependencies = (
 				1E7573E92785A2AA00C57662 /* Introspect */,
+				1EDBC1622790E8E900B34AFC /* URLImage */,
+				1E672BD12799432100E12C40 /* Alamofire */,
 			);
 			productName = JobFinder;
 			productReference = 1EEE31F72776D5AF005A4036 /* JobFinder.app */;
@@ -340,6 +358,8 @@
 			mainGroup = 1EEE31EE2776D5AF005A4036;
 			packageReferences = (
 				1E7573E82785A2AA00C57662 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
+				1EDBC1612790E8E900B34AFC /* XCRemoteSwiftPackageReference "url-image" */,
+				1E672BD02799432100E12C40 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 1EEE31F82776D5AF005A4036 /* Products */;
 			projectDirPath = "";
@@ -378,6 +398,7 @@
 				1EEE322527772C40005A4036 /* ApplyView.swift in Sources */,
 				1E7573EC2785A68000C57662 /* keyboardHandler.swift in Sources */,
 				1E9D56AF278A37F10006FCC9 /* LoginViewModel.swift in Sources */,
+				1EF515BC2790F971009B687E /* LoadingView.swift in Sources */,
 				1E7573E027859C4900C57662 /* MessageView.swift in Sources */,
 				1EEE32172776E439005A4036 /* LogInView.swift in Sources */,
 				1E7573F92785F1A100C57662 /* SearchScreen.swift in Sources */,
@@ -392,6 +413,7 @@
 				1E66DE14277C90E800831F21 /* PDFKitRepresentedView.swift in Sources */,
 				1E9D56AC278A34930006FCC9 /* AuthWebService.swift in Sources */,
 				1E66DE1A277C982E00831F21 /* DocumentView.swift in Sources */,
+				1E672BD427994EF700E12C40 /* SearchViewModel.swift in Sources */,
 				1EEE32122776D62F005A4036 /* ChatScreen.swift in Sources */,
 				1E7573E727859D7700C57662 /* text+Extension.swift in Sources */,
 				1EEE32142776D99F005A4036 /* OnboardView.swift in Sources */,
@@ -399,10 +421,12 @@
 				1EEE321E2776F9C7005A4036 /* SearchBar.swift in Sources */,
 				1EEE322E277795BD005A4036 /* NotificationSettigView.swift in Sources */,
 				1EEE32102776D624005A4036 /* ProfileScreen.swift in Sources */,
+				1EDBC15C2790DAE600B34AFC /* JobViewModel.swift in Sources */,
 				1E9D56B3278A52F30006FCC9 /* transition+Extension.swift in Sources */,
 				1E7573E427859CAF00C57662 /* ChatProfileBar.swift in Sources */,
 				1EEE322327772788005A4036 /* RecentJob.swift in Sources */,
 				1EEE321C2776F5FC005A4036 /* customModifier.swift in Sources */,
+				1EDBC15E2790DB5200B34AFC /* Job.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,6 +633,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1E672BD02799432100E12C40 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		1E7573E82785A2AA00C57662 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
@@ -617,13 +649,31 @@
 				kind = branch;
 			};
 		};
+		1EDBC1612790E8E900B34AFC /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1E672BD12799432100E12C40 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E672BD02799432100E12C40 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		1E7573E92785A2AA00C57662 /* Introspect */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1E7573E82785A2AA00C57662 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
 			productName = Introspect;
+		};
+		1EDBC1622790E8E900B34AFC /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1EDBC1612790E8E900B34AFC /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -38,7 +38,7 @@ struct EditProfile: View {
                     
                 }){
                     ZStack {
-                        Image("mypic")
+                        Image("mike")
                             .resizable()
                             .scaledToFit()
                             .clipShape(Circle())

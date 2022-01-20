@@ -25,7 +25,7 @@ struct ProfileScreen: View {
                             .fontWeight(.bold)
                             .foregroundColor(.gray)
                         
-                        Image("mypic")
+                        Image("mike")
                             .resizable()
                             .scaledToFit()
                             .clipShape(Circle())
@@ -41,9 +41,7 @@ struct ProfileScreen: View {
                             .font(.body)
                             .foregroundColor(.gray)
                     }
-                    
-                  
-                    
+    
                     VStack(alignment:.leading,spacing: 25) {
                         editProfileBtn
                         applicationBtn

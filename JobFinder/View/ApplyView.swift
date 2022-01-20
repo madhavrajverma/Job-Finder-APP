@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct ApplyView: View {
     @State private var isApplyNow:Bool = false
     @Environment(\.presentationMode) var presenationMode
+    @Binding var  selectionTab : Tabs
+    let job:Job
     var body: some View {
         ScrollView(.vertical,showsIndicators: false) {
             
@@ -27,13 +30,22 @@ struct ApplyView: View {
             }
             VStack {
                 VStack{
-                    Image("apple")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width:120,height:120)
-                        .cornerRadius(10)
                     
-                    Text("UI Design Lead")
+                    
+                    if  let url = URL(string: job.companyImage)  {
+                        URLImage(url) { image in
+                            image
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width:120,height:120)
+                                .cornerRadius(10)
+                        }
+                    }
+                    
+                    
+                       
+                    
+                    Text(job.title)
                         .font(.title)
                         .fontWeight(.bold)
                 }
@@ -41,7 +53,7 @@ struct ApplyView: View {
                 
                 VStack {
                     VStack(alignment:.center,spacing:10){
-                        Text("Apple.Inc")
+                        Text(job.company)
                             .font(.title2)
                         
                         HStack {
@@ -49,7 +61,7 @@ struct ApplyView: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width:25,height: 25)
-                            Text(" mountain View America")
+                            Text(job.address)
                                 .foregroundColor(.gray)
                                 .font(.body)
                         }
@@ -66,7 +78,7 @@ struct ApplyView: View {
                         }
                         
                         Spacer()
-                        Text("$1200/m")
+                        Text("\(job.salary)m")
                             .foregroundColor(.white)
                             .font(.title3)
                             .padding()
@@ -79,7 +91,7 @@ struct ApplyView: View {
                         Text("Description:")
                             .font(.title3)
                         
-                        Text("Must be a full-stack developer, able to implement everything in a MEAN or MERN stack paradigm (MongoDB, Express, Angular and/or React, and Node.js)")
+                        Text(job.description)
                             .foregroundColor(.gray)
                             .multilineTextAlignment(.leading)
                             .lineSpacing(1)
@@ -90,7 +102,7 @@ struct ApplyView: View {
                         Text("Experience:")
                             .font(.title3)
                         Spacer()
-                        Text("2Years")
+                        Text(job.experience)
                             .foregroundColor(.white)
                             .font(.body)
                             .padding()
@@ -106,7 +118,7 @@ struct ApplyView: View {
             }
             
             NavigationLink("", isActive: $isApplyNow) {
-                JobApply()
+                JobApply(job:job)
             }
 
         }.padding()
@@ -118,7 +130,7 @@ struct ApplyView: View {
     
     var messageBtn:some View {
         Button(action:{
-          
+            selectionTab = .chat
         }) {
             Image(systemName: "message.fill")
                 .foregroundColor(.white)
@@ -146,8 +158,8 @@ struct ApplyView: View {
     }
 }
 
-struct ApplyView_Previews: PreviewProvider {
-    static var previews: some View {
-        ApplyView()
-    }
-}
+//struct ApplyView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ApplyView()
+//    }
+//}

@@ -6,28 +6,41 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct RecentJob: View {
+    
+    let job:Job
+  
     var body: some View {
         VStack {
             HStack {
-                Image("facebook")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width:50,height: 50)
-                    .cornerRadius(8)
+               
+                if let url = URL(string: job.companyImage)  {
+                    URLImage(url) { image in
+                        image
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width:50,height: 50)
+                            .cornerRadius(8)
+                    }
+                }
+                
+                
+                    
                 
                 VStack(alignment:.leading,spacing: 15) {
                     
-                    Text("Facebook")
+                    Text(job.company)
                         .font(.body)
                         .foregroundColor(.gray)
-                    Text("UI/UX Designer")
+                    Text(job.title)
                         .font(.title3)
                         .foregroundColor(.black)
+                        .multilineTextAlignment(.leading)
                        
                     
-                    Text("Full Time")
+                    Text(job.jobType)
                         .font(.body)
                         .foregroundColor(.gray)
                         .fontWeight(.regular)
@@ -36,18 +49,19 @@ struct RecentJob: View {
                 
                 Spacer(minLength: 0)
                 
-                Text("$4550/m")
+                Text("$\(job.salary)")
                     .font(.body)
                     .foregroundColor(.gray)
                     .fontWeight(.regular)
             }
         }.padding()
             .background(Color.white.cornerRadius(12).shadow(color: Color("bgColor").opacity(0.8), radius: 5, x: 3, y: 10))
+            .background(Color.white.cornerRadius(12).shadow(color: Color("bgColor").opacity(0.8), radius: 5, x: -3, y: -10))
     }
 }
 
-struct RecentJob_Previews: PreviewProvider {
-    static var previews: some View {
-        RecentJob()
-    }
-}
+//struct RecentJob_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RecentJob()
+//    }
+//}

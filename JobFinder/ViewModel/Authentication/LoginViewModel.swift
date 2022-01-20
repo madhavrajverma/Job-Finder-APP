@@ -12,11 +12,11 @@ import SwiftUI
 class LoginViewModel:ObservableObject {
     
     
-  
-    
     var email :String  = ""
     
     var paswword :String = ""
+    
+    @Published  var  isLoading = false
     
     @Published var auth:Bool = UserDefaults.standard.bool(forKey: "auth") {
         didSet {
@@ -28,6 +28,7 @@ class LoginViewModel:ObservableObject {
     
     func login(completion:@escaping () -> Void) {
         
+        self.isLoading = true
         let defualts = UserDefaults.standard
         
         AuthWebService().login(email: email, password: paswword) { result in
@@ -41,6 +42,7 @@ class LoginViewModel:ObservableObject {
                 DispatchQueue.main.async {
                     self.isAuthenticated = true
                     self.auth = true
+                    self.isLoading = false
                     print(self.isAuthenticated)
                 }
                 

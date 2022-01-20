@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct JobFinderApp: App {
+    @StateObject var jobVM :JobViewModel = JobViewModel()
     var body: some Scene {
         WindowGroup {
+//            LogInView()
             LogInView()
+                .environmentObject(jobVM)
         }
     }
 }

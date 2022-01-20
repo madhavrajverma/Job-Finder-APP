@@ -6,25 +6,34 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct PopularJobView: View {
+    
+    let job:Job
     var body: some View {
         VStack {
             VStack(alignment:.leading) {
                 HStack(alignment:.top) {
                     VStack {
-                        Image("google")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width:35,height: 35)
+                        if let url = URL(string: job.companyImage)  {
+                            URLImage(url){ image in
+                                image
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width:35,height: 35)
+                            }
+                        }
                         
-                        Text("Google")
+                        Text(job.company)
                             .font(.headline)
                             .foregroundColor(.gray)
                     }
                     
                     Spacer(minLength: 0)
-                    Button(action:{}) {
+                    Button(action:{
+                        
+                    }) {
                         Image(systemName: "heart.fill")
                             .font(.title3)
                             .foregroundColor(.red)
@@ -33,7 +42,7 @@ struct PopularJobView: View {
                 
                 
                 VStack(alignment:.leading) {
-                    Text("Lead Product Manager")
+                    Text(job.title)
                         .font(.title3)
                         .foregroundColor(.black)
                       
@@ -42,10 +51,10 @@ struct PopularJobView: View {
                       
                     
                     HStack {
-                        Text("$2500/m")
+                        Text("$\(job.salary)")
                             .foregroundColor(.black)
                         
-                        Text("Toronoto Canada")
+                        Text(job.location.city)
                             .foregroundColor(.gray)
                     }
                 }
@@ -60,8 +69,8 @@ struct PopularJobView: View {
     }
 }
 
-struct PopularJobView_Previews: PreviewProvider {
-    static var previews: some View {
-        PopularJobView()
-    }
-}
+//struct PopularJobView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PopularJobView()
+//    }
+//}

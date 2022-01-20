@@ -20,7 +20,9 @@ struct ChatProfileBar :View {
                 .foregroundColor(.white)
                 .padding()
                 .background(Color("fgColor").cornerRadius(8).shadow(color: Color("Mlight"), radius: 5, x: 4, y: 4))
-        }    }
+        }
+        
+    }
 
     
     var body: some View {

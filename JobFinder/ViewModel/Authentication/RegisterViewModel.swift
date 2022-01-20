@@ -16,12 +16,16 @@ class RegisterViewModel:ObservableObject {
     var role : String = "user"
     var userImage:String = "none"
     
+    @Published var isLoading = false
+    @Published var isSignUpSuccesFull = false
+    
     
     @Published var isAuthenticated :Bool = false
     
     func signUp(completion:@escaping () -> Void) {
         
         let defualts = UserDefaults.standard
+        self.isLoading = true
         
         AuthWebService().signUp(name:name,email: email, password: paswword) { result in
             
@@ -31,6 +35,8 @@ class RegisterViewModel:ObservableObject {
                 defualts.setValue(token, forKey: "jsonwebtoken")
                 DispatchQueue.main.async {
                     self.isAuthenticated = true
+                    self.isLoading = false
+                    self.isSignUpSuccesFull = true
                 }
                 
             case .failure(let error):

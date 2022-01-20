@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct JobApply: View {
+    
     @State private var name: String = ""
     @State private var email :String = ""
     @State private var  country :String = ""
     @State private var message :String = ""
-    
+    let job:Job
     @State private var isTakeDocument  = false
-    
     @Environment(\.presentationMode) var presenationMode
+    
+    @EnvironmentObject var jobVM:JobViewModel
     
     @State private  var isFileName :Bool = false
     @State var data : Data?
@@ -96,6 +98,7 @@ struct JobApply: View {
                         uploadResume
                        
                         applyBtn
+                        
                         NavigationLink("", isActive: $isTakeDocument) {
                             DocumentView(data: $data, fileName: $fileName, isFileName: $isFileName)
                         }
@@ -105,7 +108,10 @@ struct JobApply: View {
                 .padding()
             
             
-        }.background(Color("Color").edgesIgnoringSafeArea(.all))
+        }.alert(isPresented: $jobVM.resumeResponse, content: {
+            Alert(title: Text("Job Succefully Applied"), message: Text("Wait for response job admin will reply you in 2 to 3 days"), dismissButton: .cancel(Text("Ok")))
+        })
+        .background(Color("Color").edgesIgnoringSafeArea(.all))
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
 
@@ -146,7 +152,13 @@ struct JobApply: View {
     }
     
     var applyBtn:some View {
-        Button(action:{}) {
+        Button(action:{
+            if let data = data {
+                jobVM.uploadResume(data, jobID: job._id, filename: fileName) { _  in
+                    
+                }
+            }
+        }) {
             Text("Apply Now")
                 .foregroundColor(.white)
                 .fontWeight(.bold)
@@ -160,11 +172,11 @@ struct JobApply: View {
     }
 }
 
-struct JobApply_Previews: PreviewProvider {
-    static var previews: some View {
-        JobApply()
-    }
-}
+//struct JobApply_Previews: PreviewProvider {
+//    static var previews: some View {
+//        JobApply()
+//    }
+//}
 
 
 struct SuperCustomTextFieldStyle: TextFieldStyle {
