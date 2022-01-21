@@ -14,7 +14,7 @@ struct HomeScreen: View {
     @State private var isDisplayAllJobs:Bool = false
     @Binding var  selectionTab : Tabs
     
-    @EnvironmentObject var jobVM :JobViewModel 
+    @EnvironmentObject var jobVM :JobViewModel
     
     var body: some View {
         NavigationView {
@@ -66,9 +66,6 @@ struct HomeScreen: View {
                                 
                                     
                             }
-                           
-                        
-                            
                         }
                         
                     }

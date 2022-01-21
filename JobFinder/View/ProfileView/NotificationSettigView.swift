@@ -33,7 +33,6 @@ struct NotificationSettigView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(.gray)
-                
             }
             
             

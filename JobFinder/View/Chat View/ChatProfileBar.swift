@@ -23,7 +23,6 @@ struct ChatProfileBar :View {
         }
         
     }
-
     
     var body: some View {
         VStack{

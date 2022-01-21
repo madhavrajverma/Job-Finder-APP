@@ -12,11 +12,15 @@ struct ProfileScreen: View {
     @State private var isAplicationView:Bool = false
     @State private var isNotificationView:Bool = false
     
+    @State private var image: UIImage? = UIImage(named: "mike")
+    
+    @EnvironmentObject var userVm :UserViewModel
     @EnvironmentObject private var loginVM:LoginViewModel
     
     var body: some View {
         NavigationView {
             ScrollView {
+               
                 VStack {
                    
                     VStack {
@@ -25,19 +29,21 @@ struct ProfileScreen: View {
                             .fontWeight(.bold)
                             .foregroundColor(.gray)
                         
-                        Image("mike")
-                            .resizable()
-                            .scaledToFit()
-                            .clipShape(Circle())
-                            .shadow(radius: 2)
-                            .frame(width:200,height: 200)
+                        if let image = image {
+                            Image(uiImage:image)
+                                .resizable()
+                                .scaledToFit()
+                                .clipShape(Circle())
+                                .shadow(radius: 2)
+                                .frame(width:200,height: 200)
+                        }
                           
-                        Text("Madhav raj verma")
+                        Text(userVm.user?.name ?? "Madhav raj")
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(.black)
                         
-                        Text(verbatim: "Mad007@gamil.com")
+                        Text(verbatim: userVm.user?.email ?? "Madhav@gmail.com")
                             .font(.body)
                             .foregroundColor(.gray)
                     }
@@ -52,7 +58,7 @@ struct ProfileScreen: View {
                     Spacer(minLength: 0)
                     
                     NavigationLink("",isActive: $isEditProfileView) {
-                        EditProfile()
+                        EditProfile(image:$image)
                     }
                     
                     NavigationLink("",isActive: $isAplicationView) {

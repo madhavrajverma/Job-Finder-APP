@@ -12,8 +12,6 @@ struct ChooseAccountView: View {
        
         GeometryReader {geo in
             VStack {
-                
-             
                 Spacer()
                 Text("Choose Account Type")
                     .font(.largeTitle)

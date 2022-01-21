@@ -7,8 +7,16 @@
 
 import Foundation
 
+struct UserResponse :Decodable {
+    let success :Bool
+    let data:UserModel
+}
 
-struct UserModel : Codable {
-    
+struct UserModel : Decodable {
+    let _id:String
+    let name:String
+    let email:String
+    let role:String
+    let userImage:String
     
 }

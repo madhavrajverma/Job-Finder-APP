@@ -33,8 +33,6 @@ struct ChatScreen: View {
     var body: some View {
         NavigationView {
             VStack {
-                
-
                     Text("Messages")
                         .font(.largeTitle)
                         .fontWeight(.bold)

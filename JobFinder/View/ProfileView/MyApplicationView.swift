@@ -6,10 +6,15 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct MyApplicationView: View {
     
     @Environment(\.presentationMode) var presenationMode
+    
+    @EnvironmentObject var userVm :UserViewModel
+    
+    
     var body: some View {
         ScrollView{
             
@@ -34,47 +39,56 @@ struct MyApplicationView: View {
                         .foregroundColor(.gray)
                 }
                 
-                ForEach(0..<8) { _ in
-                    AplliedJobView()
+                ForEach(userVm.allApplications,id:\._id) { job in
+                    AplliedJobView(job:job)
                 }
                 
                 
             }.padding()
-        }.background(Color("Color").edgesIgnoringSafeArea(.all))
+        }.onAppear(perform: {
+            userVm.getUserApplication()
+        })
+        .background(Color("Color").edgesIgnoringSafeArea(.all))
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
     }
 }
 
-struct MyApplicationView_Previews: PreviewProvider {
-    static var previews: some View {
-        MyApplicationView()
-    }
-}
+//struct MyApplicationView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MyApplicationView()
+//    }
+//}
 
 
 struct AplliedJobView: View {
+    let job:Job
     var body: some View {
         VStack {
             VStack {
                 HStack {
-                    Image("apple")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width:50,height: 50)
-                        .cornerRadius(8)
+                    
+                    if let url = URL(string: job.companyImage)  {
+                        URLImage(url) { image in
+                            image
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width:50,height: 50)
+                                .cornerRadius(8)
+                    }
+                    }
                     
                     VStack(alignment:.leading,spacing: 15) {
                         
-                        Text("Apple")
+                        Text(job.company)
                             .font(.body)
                             .foregroundColor(.gray)
-                        Text("UI/UX Designer")
+                        Text(job.title)
                             .font(.title3)
                             .foregroundColor(.black)
                            
                         
-                        Text("Full Time")
+                        Text(job.jobType)
                             .font(.body)
                             .foregroundColor(.gray)
                             .fontWeight(.regular)
@@ -91,7 +105,7 @@ struct AplliedJobView: View {
                         .font(.body)
                         .foregroundColor(Color.blue.opacity(0.6))
                     Spacer()
-                    Text("$4550/m")
+                    Text(job.jobType)
                         .foregroundColor(.white)
                         .font(.body)
                         .padding()
@@ -103,6 +117,7 @@ struct AplliedJobView: View {
             .background(Color.white.cornerRadius(12).shadow(color: Color("bgColor").opacity(0.8), radius: 5, x: 3, y: 10))
     }
 }
+
 
 
 

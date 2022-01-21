@@ -13,10 +13,11 @@ enum Tabs{
 
 
 struct ContentView: View {
+    @StateObject var userVM:UserViewModel = UserViewModel()
     @State var tabSelection: Tabs = .home
     var body: some View {
         TabView(selection: $tabSelection) {
-            HomeScreen(selectionTab: $tabSelection).tabItem {
+            HomeScreen(selectionTab: $tabSelection).environmentObject(userVM).tabItem {
                 VStack{
                     Image(systemName: "house")
                     Text("Home")
@@ -40,7 +41,7 @@ struct ContentView: View {
                     }
                 }.tag(Tabs.chat)
             
-            ProfileScreen()
+            ProfileScreen().environmentObject(userVM)
                 .tabItem {
                     VStack{
                         Image(systemName: "person")

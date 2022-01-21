@@ -29,8 +29,6 @@ class SearchViewModel :ObservableObject {
                   }
               }
             
-            print(self.jobs)
-            
         }.resume()
         
     }

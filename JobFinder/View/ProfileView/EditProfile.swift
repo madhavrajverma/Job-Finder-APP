@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct EditProfile: View {
+    
     @State private var newName:String = ""
     @State private var newEmail:String = ""
+    @Binding var image: UIImage?
+    @State private var isImagePicker:Bool = false
+    @EnvironmentObject var userVm :UserViewModel
+    
     @Environment(\.presentationMode) var presenationMode
     
     var body: some View {
@@ -35,15 +40,17 @@ struct EditProfile: View {
                     .foregroundColor(.gray)
                 
                 Button(action :{
-                    
+                    self.isImagePicker = true
                 }){
                     ZStack {
-                        Image("mike")
-                            .resizable()
-                            .scaledToFit()
-                            .clipShape(Circle())
-                            .shadow(radius: 2)
-                            .frame(width:170,height: 170)
+                        if let image = image {
+                            Image(uiImage:image)
+                                .resizable()
+                                .scaledToFit()
+                                .clipShape(Circle())
+                                .shadow(radius: 2)
+                                .frame(width:170,height: 170)
+                        }
                         
                         Image(systemName: "pencil.circle.fill")
                             .foregroundColor(.white)
@@ -84,14 +91,26 @@ struct EditProfile: View {
                 Spacer(minLength: 0)
                 
             }.padding()
+                .alert(isPresented: $userVm.isSuccess, content: {
+                    Alert(title: Text("Email password Update Succesfully"), dismissButton: .cancel(Text("Ok")))
+                })
+                .onDisappear(perform: {
+                    userVm.getUser()
+                })
                 
                 .navigationBarHidden(true)
                 .navigationBarBackButtonHidden(true)
         }.background(Color("Color").edgesIgnoringSafeArea(.all))
+            .sheet(isPresented: $isImagePicker) {
+                ImagePicker(image: $image, isShown: $isImagePicker)
+            }
     }
-        
+    
         var saveChangeBtn:some View {
-            Button(action:{}) {
+            Button(action:{
+                userVm.updateUserProfile(self.newName, email: self.newEmail)
+               
+            }) {
                 Text("Save Changes")
                     .foregroundColor(.white)
                     .fontWeight(.bold)
@@ -105,8 +124,8 @@ struct EditProfile: View {
         }
 }
 
-struct EditProfile_Previews: PreviewProvider {
-    static var previews: some View {
-        EditProfile()
-    }
-}
+//struct EditProfile_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EditProfile()
+//    }
+//}
