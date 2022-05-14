@@ -6,16 +6,30 @@
 //
 
 import SwiftUI
+import URLImage
+import URLImageStore
 
 @main
 struct JobFinderApp: App {
-    @StateObject var jobVM :JobViewModel = JobViewModel()
+    
+   
+    @AppStorage("OnBoard") var onBoarding :Bool = true
+    
+    let urlImageService = URLImageService(fileStore: URLImageFileStore(), inMemoryStore: URLImageInMemoryStore())
+    
+    @StateObject var notificatioNVM = NotificationViewModel()
    
     var body: some Scene {
         WindowGroup {
-//            LogInView()
-            LogInView()
-                .environmentObject(jobVM)
+
+            if onBoarding {
+                OnboardView()
+            }else {
+                LogInView()
+                    .environment(\.urlImageService, urlImageService)
+                    .environmentObject(notificatioNVM)
+                   
+            }
               
                 
         }
